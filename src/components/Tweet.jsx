@@ -1,4 +1,5 @@
 import { Profile1 } from "../assets";
+import PropTypes from "prop-types";
 
 export default function Tweet({ content, onRetweet }) {
   function handleRetweet() {
@@ -114,3 +115,8 @@ export default function Tweet({ content, onRetweet }) {
     </>
   );
 }
+
+Tweet.propTypes = {
+  content: PropTypes.object,
+  onRetweet: PropTypes.func,
+};

@@ -1,14 +1,19 @@
 import { useState, useRef } from "react";
-import { Profile1, Profile2 } from "../assets";
+import { Profile1 } from "../assets";
+import PropTypes from "prop-types";
+
+const initialState = {
+  id: Date.now(),
+  username: "jzangarinim",
+  name: "José Zangarini",
+  img: "",
+  reposted: false,
+};
 
 export default function TweetForm({ onSubmit }) {
   const inputRef = useRef(null);
   const [tweet, setTweet] = useState("");
-  const [user] = useState({
-    id: Date.now(),
-    username: "jzangarinim",
-    name: "José Zangarini",
-  });
+  const [user] = useState(initialState);
 
   function handleFileChange(e) {
     const fileObj = e.target.files && e.target.files[0];
@@ -25,8 +30,6 @@ export default function TweetForm({ onSubmit }) {
       ...user,
       postId: Date.now(),
       tweetContent: tweet,
-      img: "",
-      reposted: false,
     });
     setTweet("");
   }
@@ -177,3 +180,7 @@ export default function TweetForm({ onSubmit }) {
     </div>
   );
 }
+
+TweetForm.propTypes = {
+  onSubmit: PropTypes.func,
+};

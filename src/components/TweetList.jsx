@@ -1,4 +1,5 @@
 import Tweet from "./Tweet.jsx";
+import PropTypes from "prop-types";
 
 export default function TweetList({ tweets, onRetweet }) {
   return (
@@ -11,3 +12,8 @@ export default function TweetList({ tweets, onRetweet }) {
     </>
   );
 }
+
+TweetList.propTypes = {
+  tweets: PropTypes.array,
+  onRetweet: PropTypes.func,
+};
