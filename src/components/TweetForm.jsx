@@ -61,7 +61,7 @@ export default function TweetForm({ onSubmit }) {
   }
 
   return (
-    <div className="rounded mx-auto max-w-[50%] min-h-[12rem] py-3 pt-6 px-5 border-x-2 border-b border-violet-600 bg-violet-400 overflow-auto">
+    <div className="mx-auto rounded max-w-[50%] min-h-[12rem] py-3 pt-6 px-5 border-x-2 border-b border-violet-600 bg-violet-400 overflow-auto">
       <div className="flex h-full">
         <img
           src={Profile1}

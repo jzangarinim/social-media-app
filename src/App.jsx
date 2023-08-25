@@ -1,12 +1,12 @@
 import { useState } from "react";
 import TweetForm from "./components/TweetForm.jsx";
 import TweetList from "./components/TweetList.jsx";
+import "./App.css";
 
 function App() {
   const [tweets, setTweets] = useState([]);
 
   function deleteRetweet(id) {
-    console.log(tweets);
     const newTweets = tweets.filter((tweet) => {
       return id !== tweet.postId;
     });

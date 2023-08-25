@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Profile1 } from "../assets";
 import PropTypes from "prop-types";
 
@@ -16,9 +15,6 @@ export default function Tweet({ content, onRetweet, onDeleteRetweet }) {
   }
   function handleViewImage() {}
 
-  useEffect(() => {
-    console.log(content);
-  }, []);
   return (
     <>
       <div className="text-gray-950 py-3 px-5 cursor-pointer border-b border-violet-600 bg-violet-400">
