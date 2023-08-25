@@ -12,6 +12,7 @@ const initialState = {
 
 export default function TweetForm({ onSubmit }) {
   const inputRef = useRef(null);
+  const imgRef = useRef(null);
   const [tweet, setTweet] = useState("");
   const [user] = useState(initialState);
 
@@ -20,6 +21,25 @@ export default function TweetForm({ onSubmit }) {
     if (!fileObj) {
       return;
     }
+    // let files = e.target.files; RETORNA UN FILELIST
+    // let files = Array.from(e.target.files);
+    //const files = [...e.target.files];
+    let file = e.target.files[0];
+    /* files.forEach(async (file: File) => { */
+    if (file.type.indexOf("image") >= 0) {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.addEventListener("load", (e) => {
+        imgRef.current.src = e.target.result;
+      });
+    }
+    /* }); */
+
+    /* const fileReader = new FileReader();
+    fileReader.addEventListener("load", function (e) {
+      console.log(e.target);
+      imgRef.src = e.target.files[0].result;
+    }); */
   }
   function handleClick() {
     inputRef.current.click();
@@ -30,6 +50,7 @@ export default function TweetForm({ onSubmit }) {
       ...user,
       postId: Date.now(),
       tweetContent: tweet,
+      img: imgRef.current.src || "",
     });
     setTweet("");
   }
@@ -52,6 +73,11 @@ export default function TweetForm({ onSubmit }) {
               placeholder="What is happening?!"
               className="pl-3 pt-3 w-full bg-violet-400 rounded focus:outline-none resize-none break-all min-h-[6rem] overflow-auto placeholder-gray-950 text-gray-900"
             ></textarea>
+            <img
+              ref={imgRef}
+              alt=""
+              className="max-h-[650px] w-full object-cover mb-3"
+            />
           </div>
           <div className="flex justify-between pt-3 border-t border-violet-700">
             {/* Buttons */}

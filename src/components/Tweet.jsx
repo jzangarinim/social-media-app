@@ -51,13 +51,14 @@ export default function Tweet({ content, onRetweet }) {
               <p className="mb-4">{content?.tweetContent}</p>
             </div>
             <div
-              className={`w-full mb-4 rounded-lg overflow-hidden ${
-                !content?.image ? "hidden" : ""
+              className={`min-w-full mb-4 rounded-lg overflow-hidden ${
+                !content?.img ? "hidden" : ""
               }`}
             >
               <img
-                src={content?.image ? content?.image : Profile1}
+                src={content?.img ? content?.img : Profile1}
                 alt="My new profile pic"
+                className="h-full object-center max-h-[650px]"
               />
             </div>
             <div className="h-6 flex justify-between">
