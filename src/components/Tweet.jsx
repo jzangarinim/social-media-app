@@ -1,18 +1,24 @@
+import { useEffect } from "react";
 import { Profile1 } from "../assets";
 import PropTypes from "prop-types";
 
-export default function Tweet({ content, onRetweet }) {
+export default function Tweet({ content, onRetweet, onDeleteRetweet }) {
   function handleRetweet() {
     onRetweet({
       id: Date.now(),
       username: "jzangarinim",
       name: "José Zangarini",
-      postId: content.postId,
+      postId: Date.now(),
       tweetContent: content.tweetContent,
-      img: "",
+      img: content.img,
       reposted: true,
     });
   }
+  function handleViewImage() {}
+
+  useEffect(() => {
+    console.log(content);
+  }, []);
   return (
     <>
       <div className="text-gray-950 py-3 px-5 cursor-pointer border-b border-violet-600 bg-violet-400">
@@ -40,7 +46,7 @@ export default function Tweet({ content, onRetweet }) {
             src={Profile1}
             alt="Profile picture"
           />
-          <div>
+          <div className="w-full">
             <div className="flex justify-start">
               <p className="mr-3 font-bold capitalize hover:underline">
                 {content?.name}
@@ -50,17 +56,16 @@ export default function Tweet({ content, onRetweet }) {
             <div className="mb-4">
               <p className="mb-4">{content?.tweetContent}</p>
             </div>
-            <div
-              className={`min-w-full mb-4 rounded-lg overflow-hidden ${
-                !content?.img ? "hidden" : ""
-              }`}
-            >
-              <img
-                src={content?.img ? content?.img : Profile1}
-                alt="My new profile pic"
-                className="h-full object-center max-h-[650px]"
-              />
-            </div>
+            {content?.img !== "" && (
+              <div className="w-full mb-4 rounded-lg overflow-hidden">
+                <img
+                  src={content.img}
+                  className="h-full object-center max-h-[650px] object-cover"
+                  onClick={handleViewImage}
+                />
+              </div>
+            )}
+
             <div className="h-6 flex justify-between">
               {/* Comment icon */}
               <div className="flex hover:text-sky-400 hover:fill-sky-400 transition">
@@ -80,7 +85,11 @@ export default function Tweet({ content, onRetweet }) {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 -960 960 960"
                   className="mr-2"
-                  onClick={handleRetweet}
+                  onClick={
+                    content.reposted
+                      ? () => onDeleteRetweet(content.postId)
+                      : handleRetweet
+                  }
                 >
                   <path d="M280-80 120-240l160-160 42 44-86 86h464v-160h60v220H236l86 86-42 44Zm-80-450v-220h524l-86-86 42-44 160 160-160 160-42-44 86-86H260v160h-60Z" />
                 </svg>
@@ -120,4 +129,5 @@ export default function Tweet({ content, onRetweet }) {
 Tweet.propTypes = {
   content: PropTypes.object,
   onRetweet: PropTypes.func,
+  onDeleteRetweet: PropTypes.func,
 };

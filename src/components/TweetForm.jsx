@@ -50,9 +50,14 @@ export default function TweetForm({ onSubmit }) {
       ...user,
       postId: Date.now(),
       tweetContent: tweet,
-      img: imgRef.current.src || "",
+      /* String del localhost debe ser contenido dentro de una constante en un archivo .env */
+      img:
+        imgRef.current?.src !== "http://localhost:5173/"
+          ? imgRef.current?.src
+          : "",
     });
     setTweet("");
+    imgRef.current.src = "";
   }
 
   return (
@@ -74,8 +79,8 @@ export default function TweetForm({ onSubmit }) {
               className="pl-3 pt-3 w-full bg-violet-400 rounded focus:outline-none resize-none break-all min-h-[6rem] overflow-auto placeholder-gray-950 text-gray-900"
             ></textarea>
             <img
+              src=""
               ref={imgRef}
-              alt=""
               className="max-h-[650px] w-full object-cover mb-3"
             />
           </div>
