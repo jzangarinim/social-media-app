@@ -2,6 +2,7 @@ import { useState } from "react";
 import TweetForm from "./components/TweetForm.jsx";
 import TweetList from "./components/TweetList.jsx";
 import "./App.css";
+import Sidebar from "./components/Sidebar.jsx";
 
 function App() {
   const [tweets, setTweets] = useState([]);
@@ -18,13 +19,19 @@ function App() {
   }
 
   return (
-    <main className="bg-white dark:bg-violet-800">
-      <TweetForm onSubmit={handleSubmit} />
-      <TweetList
-        tweets={tweets}
-        onRetweet={handleSubmit}
-        onDeleteRetweet={deleteRetweet}
-      />
+    <main className="bg-white dark:bg-violet-800 flex justify-center">
+      <div className="w-[10vw] h-[100vh]">
+        <Sidebar onSubmit={handleSubmit} />
+      </div>
+      <div className="flex-col w-[50%]">
+        <TweetForm onSubmit={handleSubmit} />
+        <TweetList
+          tweets={tweets}
+          onRetweet={handleSubmit}
+          onDeleteRetweet={deleteRetweet}
+        />
+      </div>
+      <div className="w-[10vw]"></div>
     </main>
   );
 }

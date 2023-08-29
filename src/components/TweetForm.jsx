@@ -21,11 +21,7 @@ export default function TweetForm({ onSubmit }) {
     if (!fileObj) {
       return;
     }
-    // let files = e.target.files; RETORNA UN FILELIST
-    // let files = Array.from(e.target.files);
-    //const files = [...e.target.files];
     let file = e.target.files[0];
-    /* files.forEach(async (file: File) => { */
     if (file.type.indexOf("image") >= 0) {
       const fileReader = new FileReader();
       fileReader.readAsDataURL(file);
@@ -33,7 +29,19 @@ export default function TweetForm({ onSubmit }) {
         imgRef.current.src = e.target.result;
       });
     }
-    /* }); */
+
+    // let files = e.target.files; RETORNA UN FILELIST
+    // let files = Array.from(e.target.files);
+    //const files = [...e.target.files];
+
+    /* const files = [...e.target.files];
+    files.forEach(async (file) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.addEventListener("load", (e) => {
+        setImages([...images, e.target.result]);
+      });
+    });  */
 
     /* const fileReader = new FileReader();
     fileReader.addEventListener("load", function (e) {
@@ -61,7 +69,7 @@ export default function TweetForm({ onSubmit }) {
   }
 
   return (
-    <div className="mx-auto rounded max-w-[50%] min-h-[12rem] py-3 pt-6 px-5 border-x-2 border-b border-violet-600 bg-violet-400 overflow-auto">
+    <div className="rounded min-h-[12rem] py-3 pt-6 px-5 border-x-2 border-b border-violet-600 bg-violet-400 overflow-auto">
       <div className="flex h-full">
         <img
           src={Profile1}
@@ -78,6 +86,9 @@ export default function TweetForm({ onSubmit }) {
               placeholder="What is happening?!"
               className="pl-3 pt-3 w-full bg-violet-400 rounded focus:outline-none resize-none break-all min-h-[6rem] overflow-auto placeholder-gray-950 text-gray-900"
             ></textarea>
+            {/* {images.map((image, key) => {
+              return <img key={key} src={image} ref={image} alt="" />;
+            })} */}
             <img
               src=""
               ref={imgRef}
