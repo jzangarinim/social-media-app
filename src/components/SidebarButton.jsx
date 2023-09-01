@@ -29,5 +29,5 @@ export default function SidebarButton({ icon }) {
 }
 
 SidebarButton.propTypes = {
-  icon: PropTypes.str,
+  icon: PropTypes.string,
 };

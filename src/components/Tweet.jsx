@@ -1,5 +1,6 @@
 import { Profile1 } from "../assets";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function Tweet({ content, onRetweet, onDeleteRetweet }) {
   function handleRetweet() {
@@ -37,11 +38,14 @@ export default function Tweet({ content, onRetweet, onDeleteRetweet }) {
         </div>
         {/* Tweet body */}
         <div className="flex">
-          <img
-            className="w-14 h-14 rounded-full object-cover mr-4"
-            src={Profile1}
-            alt="Profile picture"
-          />
+          <Link to={`/users/:id`}>
+            <img
+              className="w-14 h-14 rounded-full object-cover mr-4"
+              src={Profile1}
+              alt="Profile picture"
+            />
+          </Link>
+
           <div className="w-full">
             <div className="flex justify-start">
               <p className="mr-3 font-bold capitalize hover:underline">

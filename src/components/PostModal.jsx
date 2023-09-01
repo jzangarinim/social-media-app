@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export default function PostModal({ visible, onClose, onSubmit }) {
   if (!visible) return null;
   return (
-    <div className="fixed inset-0 bg-opacity-30 flex justify-center items-center">
+    <div className="fixed inset-0 bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
       <div className="rounded w-[40%] dark:bg-violet-400">
         <div className="rounded flex justify-end border-x-2 border-t border-violet-600">
           <button
