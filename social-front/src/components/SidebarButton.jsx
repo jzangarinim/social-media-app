@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function SidebarButton({ icon }) {
   let aux = "";
@@ -21,10 +22,12 @@ export default function SidebarButton({ icon }) {
   }
 
   return (
-    <button className="rounded dark:bg-violet-800 dark:text-white text-left h-[10%]">
-      <i className={`fa-solid fa-${icon} mx-3`}></i>
-      {aux}
-    </button>
+    <Link to="/">
+      <button className="rounded dark:bg-violet-800 dark:text-white text-left h-[10%]">
+        <i className={`fa-solid fa-${icon} mx-3`}></i>
+        {aux}
+      </button>
+    </Link>
   );
 }
 

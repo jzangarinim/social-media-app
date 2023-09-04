@@ -38,19 +38,20 @@ export default function Tweet({ content, onRetweet, onDeleteRetweet }) {
         </div>
         {/* Tweet body */}
         <div className="flex">
-          <Link to={`/users/:id`}>
+          <Link to={`/users/${content?.id}`}>
             <img
               className="w-14 h-14 rounded-full object-cover mr-4"
               src={Profile1}
               alt="Profile picture"
             />
           </Link>
-
           <div className="w-full">
             <div className="flex justify-start">
-              <p className="mr-3 font-bold capitalize hover:underline">
-                {content?.name}
-              </p>
+              <Link to={`/users/${content?.id}`}>
+                <p className="mr-3 font-bold capitalize hover:underline">
+                  {content?.name}
+                </p>
+              </Link>
               <p className="">@jzangarinim</p>
             </div>
             <div className="mb-4">

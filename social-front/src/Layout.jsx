@@ -8,7 +8,7 @@ export default function Layout() {
       <BrowserRouter basename="/">
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="/users" element={<User />} />
+          <Route path="/users/:id" element={<User />} />
         </Routes>
       </BrowserRouter>
     </div>

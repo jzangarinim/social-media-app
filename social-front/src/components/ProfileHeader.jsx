@@ -1,0 +1,69 @@
+import { Link } from "react-router-dom";
+import { Profile1 } from "../assets";
+
+export default function ProfileHeader() {
+  return (
+    <div className="rounded min-h-[24rem] border-x-2 border-b border-violet-600 bg-violet-400 overflow-auto">
+      <div className="py-3 px-5 h-[10%] border-b border-violet-600">
+        <Link to="/">
+          <i className="fa-solid fa-arrow-left pr-3"></i>
+        </Link>
+        Go back
+      </div>
+      <div className="h-[6rem] lg:h-[14rem] border-b border-violet-600">
+        <img
+          className="w-[100%] h-[100%] object-cover overflow-hidden"
+          src={Profile1}
+          alt="Banner picture"
+        />
+      </div>
+      <div className="py-3 px-5 h-[100%] border-b border-violet-600">
+        <div className="flex justify-end">
+          <button className="bg-violet-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            Edit profile
+          </button>
+        </div>
+        <div className="pt-4">José Zangarini</div>
+        <div className="text-violet-500 text-sm">@jzangarinim</div>
+        <div className="pt-2">must b nice</div>
+        <div className="pt-2 flex">
+          <div>
+            <span className="material-symbols-outlined pr-2">cake</span>Born
+            March 9, 1996
+          </div>
+          <div>
+            <span className="material-symbols-outlined pl-3 pr-2">
+              calendar_month
+            </span>
+            July, 2016
+          </div>
+        </div>
+        <div className="pt-2">Followers & following</div>
+        <div className="pt-2 flex justify-evenly">
+          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer">
+            Posts
+          </div>
+          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer">
+            Replies
+          </div>
+          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer">
+            Highlights
+          </div>
+          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer">
+            Media
+          </div>
+          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer">
+            Likes
+          </div>
+        </div>
+      </div>
+      <div className="w-14 h-14 lg:w-28 lg:h-28 border-2 border-violet-400 rounded-full relative bottom-20 left-4 lg:bottom-80 lg:left-6 bg-violet-400">
+        <img
+          className="w-[100%] h-[100%] object-cover overflow-hidden rounded-full"
+          src={Profile1}
+          alt="Banner picture"
+        />
+      </div>
+    </div>
+  );
+}

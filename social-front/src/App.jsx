@@ -23,7 +23,7 @@ function App() {
       <div className="w-[10vw] h-[100vh]">
         <Sidebar onSubmit={handleSubmit} />
       </div>
-      <div className="flex-col w-[50%]">
+      <div className="flex-col w-[40%]">
         <TweetForm onSubmit={handleSubmit} />
         <TweetList
           tweets={tweets}
