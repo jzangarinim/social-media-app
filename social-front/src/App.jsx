@@ -3,6 +3,7 @@ import TweetForm from "./components/TweetForm.jsx";
 import TweetList from "./components/TweetList.jsx";
 import "./App.css";
 import Sidebar from "./components/Sidebar.jsx";
+import SidebarRight from "./components/SidebarRight.jsx";
 
 function App() {
   const [tweets, setTweets] = useState([]);
@@ -20,9 +21,9 @@ function App() {
 
   return (
     <main className="bg-white dark:bg-violet-800 flex justify-center">
-      <div className="w-[10vw] h-[100vh]">
+      <aside className="w-[10vw] h-[100vh]">
         <Sidebar onSubmit={handleSubmit} />
-      </div>
+      </aside>
       <div className="flex-col w-[40%]">
         <TweetForm onSubmit={handleSubmit} />
         <TweetList
@@ -31,7 +32,9 @@ function App() {
           onDeleteRetweet={deleteRetweet}
         />
       </div>
-      <div className="w-[10vw]"></div>
+      <aside className="w-[10vw]">
+        <SidebarRight />
+      </aside>
     </main>
   );
 }

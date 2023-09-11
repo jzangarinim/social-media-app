@@ -6,7 +6,7 @@ export default function SidebarButton({ icon }) {
   if (icon === "house") {
     aux = "Home";
   } else if (icon === "magnifying-glass") {
-    aux = "Search";
+    aux = "Explore";
   } else if (icon === "bell") {
     aux = "Notifications";
   } else if (icon === "envelope") {

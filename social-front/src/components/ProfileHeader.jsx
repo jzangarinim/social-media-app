@@ -35,7 +35,7 @@ export default function ProfileHeader() {
             <span className="material-symbols-outlined pl-3 pr-2">
               calendar_month
             </span>
-            July, 2016
+            Joined July, 2016
           </div>
         </div>
         <div className="pt-2">Followers & following</div>
@@ -59,7 +59,7 @@ export default function ProfileHeader() {
       </div>
       <div className="w-14 h-14 lg:w-28 lg:h-28 border-2 border-violet-400 rounded-full relative bottom-20 left-4 lg:bottom-80 lg:left-6 bg-violet-400">
         <img
-          className="w-[100%] h-[100%] object-cover overflow-hidden rounded-full"
+          className="w-[100%] h-[100%] object-cover overflow-hidden rounded-full mb-4"
           src={Profile1}
           alt="Banner picture"
         />
