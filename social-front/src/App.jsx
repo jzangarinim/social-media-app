@@ -21,10 +21,10 @@ function App() {
 
   return (
     <main className="bg-white dark:bg-violet-800 flex justify-center">
-      <aside className="w-[10vw] h-[100vh]">
+      <aside className="w-[20vw] lg:w-[10vw] h-[100vh]">
         <Sidebar onSubmit={handleSubmit} />
       </aside>
-      <div className="flex-col w-[40%]">
+      <div className="flex-col lg:w-[40%]">
         <TweetForm onSubmit={handleSubmit} />
         <TweetList
           tweets={tweets}
@@ -32,7 +32,7 @@ function App() {
           onDeleteRetweet={deleteRetweet}
         />
       </div>
-      <aside className="w-[10vw]">
+      <aside className="w-[20vw] lg:w-[10vw]">
         <SidebarRight />
       </aside>
     </main>

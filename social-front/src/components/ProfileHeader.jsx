@@ -57,7 +57,7 @@ export default function ProfileHeader() {
           </div>
         </div>
       </div>
-      <div className="w-14 h-14 lg:w-28 lg:h-28 border-2 border-violet-400 rounded-full relative bottom-20 left-4 lg:bottom-80 lg:left-6 bg-violet-400">
+      <div className="w-14 h-14 lg:w-28 lg:h-28 border-2 border-violet-400 rounded-full relative bottom-80 left-4 lg:bottom-[21rem] lg:left-6 bg-violet-400">
         <img
           className="w-[100%] h-[100%] object-cover overflow-hidden rounded-full mb-4"
           src={Profile1}

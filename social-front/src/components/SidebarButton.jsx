@@ -25,7 +25,7 @@ export default function SidebarButton({ icon }) {
     <Link to="/">
       <button className="rounded dark:bg-violet-800 dark:text-white text-left h-[10%]">
         <i className={`fa-solid fa-${icon} mx-3`}></i>
-        {aux}
+        <span className="invisible md:visible">{aux}</span>
       </button>
     </Link>
   );
