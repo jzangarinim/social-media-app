@@ -1,9 +1,12 @@
 import express from "express";
 import tweetRoutes from "./routes/tweets.js";
 import "dotenv/config";
+import { dbClient } from "./config/db.js";
 
 const app = express();
-const PORT = process.env.BACKEND_PORT;
+const PORT = process.env.PORT;
+
+app.use(express.json());
 
 /* app.use("/", (req, res, next) => {
   // const whitelist = ['', '', ''];
@@ -33,6 +36,7 @@ app.use("*", (req, res) => {
   res.end();
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
+  await dbClient.connect();
   console.log(`Server running on port: ${PORT}`);
 });

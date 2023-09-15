@@ -40,24 +40,24 @@ export default function ProfileHeader() {
         </div>
         <div className="pt-2">Followers & following</div>
         <div className="pt-2 flex justify-evenly">
-          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer">
+          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer rounded">
             Posts
           </div>
-          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer">
+          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer rounded">
             Replies
           </div>
-          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer">
+          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer rounded">
             Highlights
           </div>
-          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer">
+          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer rounded">
             Media
           </div>
-          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer">
+          <div className="hover:bg-violet-600 p-3 hover:cursor-pointer rounded">
             Likes
           </div>
         </div>
       </div>
-      <div className="w-14 h-14 lg:w-28 lg:h-28 border-2 border-violet-400 rounded-full relative bottom-80 left-4 lg:bottom-[21rem] lg:left-6 bg-violet-400">
+      <div className="w-28 h-28 border-2 border-violet-400 rounded-full relative bottom-[22rem] left-4 md:bottom-[21rem] lg:left-6 bg-violet-400">
         <img
           className="w-[100%] h-[100%] object-cover overflow-hidden rounded-full mb-4"
           src={Profile1}
