@@ -1,5 +1,6 @@
 import express from "express";
 import tweetRoutes from "./routes/tweets.js";
+import userRoutes from "./routes/users.js";
 import "dotenv/config";
 import { dbClient } from "./config/db.js";
 
@@ -29,6 +30,8 @@ app.use(express.json());
 }); */
 
 app.use("/tweet", tweetRoutes);
+
+app.use("/user", userRoutes);
 
 app.use("*", (req, res) => {
   res.status(404);
